@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1>My Jokes</h1>
+
+        <form method="post">
+            <div class="inputbox">
+                <input type="text" id="fname" name="fname">
+                <span>First Name</span>
+            </div>
+            <div class="inputbox">
+                <input type="text" id="lname" name="lname">
+                <span>Last Name</span>
+            </div>
+            <div class="inputbox">
+                <input type="submit" value="Submit" formaction="/submit">
+            </div>
+        </form>
+    </div>
+    <% if (locals.fname || locals.lname) { %>
+        <% if (locals.content) { %>
+            <div class="center">
+
+                <h2>
+                    <%= fname %>
+                        <%= lname %>:
+                </h2>
+
+                <h3>
+                    <%= content %>
+                </h3>
+            </div>
+            <% }} %>
+
+</body>
+
+</html>
